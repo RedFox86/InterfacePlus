@@ -1,11 +1,9 @@
 package net.projecte.objects;
 
-import net.projecte.BufferedImageManager;
-import net.projecte.gui.Interface;
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+@SuppressWarnings("unused")
 public class RenderableObject {
 	private final BufferedImage img;
 	private int x;

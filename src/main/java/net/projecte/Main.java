@@ -9,6 +9,7 @@ import net.projecte.objects.util.PanelBuilder;
 
 import java.awt.*;
 
+@SuppressWarnings("unused")
 public class Main {
 	public static void main(String[] args) {
 		Interface i = new InterfaceBuilder().title("Hello").color(Color.BLACK).build();
