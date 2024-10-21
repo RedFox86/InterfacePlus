@@ -6,6 +6,7 @@ import net.projecte.objects.RenderableObjectBuilder;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("unused")
 public class ButtonBuilder extends RenderableObjectBuilder<Button, ButtonBuilder> {
 	private ArrayList<Task> taskList = new ArrayList<>();
 	public ButtonBuilder(Interface i, String imgPath) {

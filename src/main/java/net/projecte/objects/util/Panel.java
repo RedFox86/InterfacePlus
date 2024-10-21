@@ -2,7 +2,6 @@ package net.projecte.objects.util;
 
 import net.projecte.objects.RenderableObject;
 
-import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Panel extends RenderableObject {
