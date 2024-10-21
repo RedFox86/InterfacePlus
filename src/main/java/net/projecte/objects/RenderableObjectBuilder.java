@@ -5,28 +5,33 @@ import net.projecte.gui.Interface;
 
 import java.awt.image.BufferedImage;
 
-public class RenderableObjectBuilder {
-	private final BufferedImage img;
-	private int x;
-	private int y;
-	private final Interface bInterface;
-	public RenderableObjectBuilder(Interface i, String imgPath) {
+@SuppressWarnings("unchecked")
+public abstract class RenderableObjectBuilder<K extends RenderableObject, T extends RenderableObjectBuilder<K, T>> {
+	protected final BufferedImage img;
+	protected int x;
+	protected int y;
+	protected final Interface bInterface;
+	protected RenderableObjectBuilder(Interface i, String imgPath) {
 		this.x = 0;
 		this.y = 0;
 		bInterface = i;
 		img = BufferedImageManager.getImage(imgPath);
 	}
-	public RenderableObjectBuilder x(int objX) {
+	public abstract T x(int objX);
+	public abstract T y(int objY);
+
+	protected T setX(int objX) {
 		this.x = objX;
-		return this;
+		return (T)this;
 	}
-	public RenderableObjectBuilder y(int objY) {
+	protected T setY(int objY) {
 		this.y = objY;
-		return this;
+		return (T)this;
 	}
-	public RenderableObject build() {
-		RenderableObject r = new RenderableObject(img, x, y);
-		bInterface.getRenderer().objects.add(r);
-		return r;
+	protected K render(K k) {
+		bInterface.getRenderer().objects.add(k);
+		return k;
 	}
+
+	public abstract K build();
 }

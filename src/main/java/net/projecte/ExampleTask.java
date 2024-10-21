@@ -3,7 +3,7 @@ package net.projecte;
 import net.projecte.objects.RenderableObject;
 
 public class ExampleTask extends Task {
-	private RenderableObject object;
+	private final RenderableObject object;
 	public ExampleTask(RenderableObject r) {
 		object = r;
 	}

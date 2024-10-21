@@ -12,14 +12,14 @@ public class RenderableObject {
 	private int y;
 	private final int sizeX;
 	private final int sizeY;
-	public RenderableObject(BufferedImage objectImg, int IX, int IY) {
+	protected RenderableObject(BufferedImage objectImg, int IX, int IY) {
 		x = IX;
 		y = IY;
 		img = objectImg;
 		sizeX = img.getWidth();
 		sizeY = img.getHeight();
 	}
-	public void drawImage(Graphics2D g2) {
+	private void drawImage(Graphics2D g2) {
 		g2.drawImage(img, x, y, sizeX, sizeY, null);
 	}
 	public void setX(int IX) {
@@ -33,5 +33,8 @@ public class RenderableObject {
 	}
 	public int getY() {
 		return y;
+	}
+	public void update(Graphics2D g2) {
+		drawImage(g2);
 	}
 }
