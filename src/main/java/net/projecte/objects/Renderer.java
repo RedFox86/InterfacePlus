@@ -2,7 +2,6 @@ package net.projecte.objects;
 
 import net.projecte.gui.util.WindowContext;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 public class Renderer {

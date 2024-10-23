@@ -10,7 +10,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Interface {
-	private ArrayList<Task> taskList = new ArrayList<>();
+	private final ArrayList<Task> taskList = new ArrayList<>();
 	private final JFrame window;
 	private DisplayPanel panel;
 
