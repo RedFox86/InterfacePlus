@@ -1,11 +1,13 @@
 package net.projecte.objects;
 
+import net.projecte.gui.util.WindowContext;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 @SuppressWarnings("unused")
 public class RenderableObject {
-	private final BufferedImage img;
+	protected BufferedImage displayImg;
 	private int x;
 	private int y;
 	private final int sizeX;
@@ -13,12 +15,12 @@ public class RenderableObject {
 	protected RenderableObject(BufferedImage objectImg, int IX, int IY) {
 		x = IX;
 		y = IY;
-		img = objectImg;
-		sizeX = img.getWidth();
-		sizeY = img.getHeight();
+		displayImg = objectImg;
+		sizeX = displayImg.getWidth();
+		sizeY = displayImg.getHeight();
 	}
-	private void drawImage(Graphics2D g2) {
-		g2.drawImage(img, x, y, sizeX, sizeY, null);
+	private void drawImage(WindowContext context) {
+		context.getGraphics2D().drawImage(displayImg, x, y, sizeX, sizeY, null);
 	}
 	public void setX(int IX) {
 		x = IX;
@@ -32,7 +34,13 @@ public class RenderableObject {
 	public int getY() {
 		return y;
 	}
-	public void update(Graphics2D g2) {
-		drawImage(g2);
+	public int getSizeX() {
+		return sizeX;
+	}
+	public int getSizeY() {
+		return sizeY;
+	}
+	public void update(WindowContext context) {
+		drawImage(context);
 	}
 }

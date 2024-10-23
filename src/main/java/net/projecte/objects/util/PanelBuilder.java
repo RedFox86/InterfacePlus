@@ -1,6 +1,6 @@
 package net.projecte.objects.util;
 
-import net.projecte.gui.Interface;
+import net.projecte.gui.display.Interface;
 import net.projecte.objects.RenderableObjectBuilder;
 
 public class PanelBuilder extends RenderableObjectBuilder<Panel, PanelBuilder> {

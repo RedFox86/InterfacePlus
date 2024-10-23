@@ -1,7 +1,7 @@
 package net.projecte.objects;
 
 import net.projecte.BufferedImageManager;
-import net.projecte.gui.Interface;
+import net.projecte.gui.display.Interface;
 
 import java.awt.image.BufferedImage;
 

@@ -1,12 +1,8 @@
-package net.projecte.gui;
+package net.projecte.gui.display;
 
-import net.projecte.Task;
-import net.projecte.objects.Renderer;
-
-import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
+@SuppressWarnings("unused")
 public class InterfaceBuilder {
 	private String title;
 	private Dimension size;

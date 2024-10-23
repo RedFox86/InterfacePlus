@@ -1,16 +1,20 @@
 package net.projecte.objects.util;
 
+import net.projecte.BufferedImageManager;
 import net.projecte.Task;
-import net.projecte.gui.Interface;
+import net.projecte.gui.display.Interface;
 import net.projecte.objects.RenderableObjectBuilder;
 
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 @SuppressWarnings("unused")
 public class ButtonBuilder extends RenderableObjectBuilder<Button, ButtonBuilder> {
 	private ArrayList<Task> taskList = new ArrayList<>();
+	private BufferedImage[] imgs;
 	public ButtonBuilder(Interface i, String imgPath) {
 		super(i, imgPath);
+		imgs = new BufferedImage[]{img, img, img};
 	}
 	@Override
 	public ButtonBuilder y(int objY) {
@@ -24,8 +28,16 @@ public class ButtonBuilder extends RenderableObjectBuilder<Button, ButtonBuilder
 		taskList.add(t);
 		return this;
 	}
+	public ButtonBuilder hoverImg(String imgPath) {
+		imgs[1] = BufferedImageManager.getImage(imgPath);
+		return this;
+	}
+	public ButtonBuilder clickImg(String imgPath) {
+		imgs[2] = BufferedImageManager.getImage(imgPath);
+		return this;
+	}
 	@Override
 	public Button build() {
-		return super.render(new Button(img, x, y, taskList));
+		return super.render(new Button(imgs, x, y, taskList));
 	}
 }

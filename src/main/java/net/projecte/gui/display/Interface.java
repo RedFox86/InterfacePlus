@@ -1,6 +1,8 @@
-package net.projecte.gui;
+package net.projecte.gui.display;
 
 import net.projecte.Task;
+import net.projecte.gui.DisplayPanel;
+import net.projecte.gui.util.WindowContext;
 import net.projecte.objects.Renderer;
 
 import javax.swing.*;
@@ -35,8 +37,8 @@ public class Interface {
 			t.execute();
 		}
 	}
-	public void updateImages(Graphics2D g2) {
-		panel.renderer.renderObjects(g2);
+	public void updateImages(WindowContext context) {
+		panel.renderer.renderObjects(context);
 	}
 	public void addTask(Task t) {
 		taskList.add(t);

@@ -1,5 +1,7 @@
 package net.projecte.objects;
 
+import net.projecte.gui.util.WindowContext;
+
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -8,9 +10,9 @@ public class Renderer {
 	public Renderer() {
 		 objects = new ArrayList<>();
 	}
-	public void renderObjects(Graphics2D g2) {
+	public void renderObjects(WindowContext context) {
 		for (RenderableObject object : objects) {
-			object.update(g2);
+			object.update(context);
 		}
 	}
 }
