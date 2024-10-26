@@ -16,5 +16,6 @@ public class Main {
 		Button b = new ButtonBuilder(i, "/graphics/object/button.png").hoverImg("/graphics/object/button_hover.png").clickImg("/graphics/object/button_press.png").x(100).y(200).build();
 		Panel p = new PanelBuilder(i, "/graphics/object/red_rect.png").x(200).y(150).build();
 		i.addTask(new ExampleTask(p));
+		b.onClick(new ExampleTask(b));
 	}
 }
