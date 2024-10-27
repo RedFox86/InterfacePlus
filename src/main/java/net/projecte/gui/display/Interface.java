@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Interface {
 	private final ArrayList<Task> taskList = new ArrayList<>();
 	private final JFrame window;
-	private DisplayPanel panel;
+	private final DisplayPanel panel;
 
 	public Interface(String title, Dimension size, Color background, int FPS) {
 		window = new JFrame();

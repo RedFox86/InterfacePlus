@@ -67,7 +67,4 @@ public class DisplayPanel extends JPanel implements Runnable {
 		panelInterface.updateImages(context);
 		g2.dispose();
 	}
-	public WindowContext getContext() {
-		return context;
-	}
 }
