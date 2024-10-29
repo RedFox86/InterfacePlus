@@ -14,7 +14,7 @@ public class Button extends RenderableObject {
 	private final BufferedImage defaultImg;
 	private final boolean holdTrigger;
 	private boolean buttonDown = false;
-	public Button(BufferedImage[] objectImgs, int IX, int IY, boolean renderableObjectHoldTrigger) {
+	protected Button(BufferedImage[] objectImgs, int IX, int IY, boolean renderableObjectHoldTrigger) {
 		super(objectImgs[0], IX, IY);
 		defaultImg = objectImgs[0];
 		hoverImg = objectImgs[1];

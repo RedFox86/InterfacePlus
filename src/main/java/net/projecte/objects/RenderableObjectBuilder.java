@@ -15,7 +15,11 @@ public abstract class RenderableObjectBuilder<K extends RenderableObject, T exte
 		this.x = 0;
 		this.y = 0;
 		bInterface = i;
-		img = BufferedImageManager.getImage(imgPath);
+		if (imgPath != null) {
+			img = BufferedImageManager.getImage(imgPath);
+		} else {
+			img = null;
+		}
 	}
 	public abstract T x(int objX);
 	public abstract T y(int objY);

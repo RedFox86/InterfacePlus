@@ -15,10 +15,18 @@ public class RenderableObject {
 		x = IX;
 		y = IY;
 		displayImg = objectImg;
-		sizeX = displayImg.getWidth();
-		sizeY = displayImg.getHeight();
+		if (objectImg != null) {
+			sizeX = displayImg.getWidth();
+			sizeY = displayImg.getHeight();
+		} else {
+			sizeX = 0;
+			sizeY = 0;
+		}
 	}
 	private void drawImage(WindowContext context) {
+		if (displayImg == null) {
+			return;
+		}
 		context.getGraphics2D().drawImage(displayImg, x, y, sizeX, sizeY, null);
 	}
 	public void setX(int IX) {

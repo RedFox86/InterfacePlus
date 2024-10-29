@@ -10,7 +10,7 @@ public class AnimatedPanel extends Panel {
 	private final int frameRate;
 	private int currentFrame;
 	private int frameDelay;
-	public AnimatedPanel(int IX, int IY, BufferedImage[] animatedPanelImageList, int animatedPanelFrameRate) {
+	protected AnimatedPanel(int IX, int IY, BufferedImage[] animatedPanelImageList, int animatedPanelFrameRate) {
 		super(animatedPanelImageList[0], IX, IY);
 		imageList = animatedPanelImageList;
 		maxFrame = imageList.length;
