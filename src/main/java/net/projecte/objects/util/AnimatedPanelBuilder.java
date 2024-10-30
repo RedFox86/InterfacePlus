@@ -1,6 +1,7 @@
 package net.projecte.objects.util;
 
 import net.projecte.BufferedImageManager;
+import net.projecte.Logger;
 import net.projecte.gui.display.Interface;
 import net.projecte.objects.RenderableObjectBuilder;
 
@@ -33,6 +34,7 @@ public class AnimatedPanelBuilder extends RenderableObjectBuilder<AnimatedPanel,
 
 	@Override
 	public AnimatedPanel build() {
-		return super.render(new AnimatedPanel(x, y, imageList, frameRate));
+		Logger.log("Animated Panel successfully built.");
+		return super.build(new AnimatedPanel(x, y, imageList, frameRate));
 	}
 }

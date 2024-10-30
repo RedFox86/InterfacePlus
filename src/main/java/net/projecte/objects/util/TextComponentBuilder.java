@@ -1,19 +1,19 @@
 package net.projecte.objects.util;
 
+import net.projecte.Logger;
 import net.projecte.gui.display.Interface;
 import net.projecte.objects.RenderableObjectBuilder;
 
 import java.awt.*;
 
 public class TextComponentBuilder extends RenderableObjectBuilder<TextComponent, TextComponentBuilder> {
-	private String displayText = "Unititled";
+	private String displayText = "Untitled";
 	private Color displayColor = Color.BLACK;
 	private String fontName = "TimesRoman";
 	private int displaySize = 10;
 	private int displayMode = 0;
-	public TextComponentBuilder(Interface i, String textComponentBuilderDisplayText) {
+	public TextComponentBuilder(Interface i) {
 		super(i, null);
-		displayText = textComponentBuilderDisplayText;
 	}
 	
 	@Override
@@ -48,6 +48,7 @@ public class TextComponentBuilder extends RenderableObjectBuilder<TextComponent,
 	
 	@Override
 	public TextComponent build() {
-		return super.render(new TextComponent(displayText, x, y, displayColor, fontName, displaySize, displayMode));
+		Logger.log("Text Component successfully built.");
+		return super.build(new TextComponent(displayText, x, y, displayColor, fontName, displaySize, displayMode));
 	}
 }

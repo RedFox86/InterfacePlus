@@ -1,6 +1,7 @@
 package net.projecte.objects.util;
 
 import net.projecte.BufferedImageManager;
+import net.projecte.Logger;
 import net.projecte.gui.display.Interface;
 import net.projecte.objects.RenderableObjectBuilder;
 
@@ -36,6 +37,7 @@ public class ButtonBuilder extends RenderableObjectBuilder<Button, ButtonBuilder
 	}
 	@Override
 	public Button build() {
-		return super.render(new Button(imgs, x, y, holdTrigger));
+		Logger.log("Button successfully built.");
+		return super.build(new Button(imgs, x, y, holdTrigger));
 	}
 }

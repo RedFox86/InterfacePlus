@@ -1,6 +1,7 @@
 package net.projecte.objects;
 
 import net.projecte.BufferedImageManager;
+import net.projecte.Logger;
 import net.projecte.gui.display.Interface;
 
 import java.awt.image.BufferedImage;
@@ -32,7 +33,7 @@ public abstract class RenderableObjectBuilder<K extends RenderableObject, T exte
 		this.y = objY;
 		return (T)this;
 	}
-	protected K render(K k) {
+	protected K build(K k) {
 		bInterface.getRenderer().objects.add(k);
 		return k;
 	}

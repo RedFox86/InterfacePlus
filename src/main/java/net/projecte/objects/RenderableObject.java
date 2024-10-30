@@ -24,9 +24,6 @@ public class RenderableObject {
 		}
 	}
 	private void drawImage(WindowContext context) {
-		if (displayImg == null) {
-			return;
-		}
 		context.getGraphics2D().drawImage(displayImg, x, y, sizeX, sizeY, null);
 	}
 	public void setX(int IX) {
