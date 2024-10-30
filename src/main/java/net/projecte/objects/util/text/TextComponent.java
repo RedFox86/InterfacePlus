@@ -5,6 +5,7 @@ import net.projecte.objects.RenderableObject;
 
 import java.awt.*;
 
+@SuppressWarnings("unused")
 public class TextComponent extends RenderableObject {
 	private Font displayFont;
 	private Color displayColor;

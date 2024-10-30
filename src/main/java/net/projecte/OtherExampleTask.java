@@ -1,6 +1,5 @@
 package net.projecte;
 
-import net.projecte.objects.RenderableObject;
 import net.projecte.objects.util.animated.NodePanel;
 
 public class OtherExampleTask implements Task {

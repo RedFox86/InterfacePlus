@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 public class NodePanel extends RenderableObject {
 	private final BufferedImage[] imageList;
 	private int currentFrame = 0;
-	private boolean repeat;
+	private final boolean repeat;
 	protected NodePanel(BufferedImage[] nodePanelImageList, int IX, int IY, boolean nodePanelRepeat) {
 		super(nodePanelImageList[0], IX, IY);
 		imageList = nodePanelImageList;
