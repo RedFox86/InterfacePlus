@@ -1,4 +1,4 @@
-package net.projecte.objects.util;
+package net.projecte.objects.util.text;
 
 import net.projecte.gui.util.WindowContext;
 import net.projecte.objects.RenderableObject;

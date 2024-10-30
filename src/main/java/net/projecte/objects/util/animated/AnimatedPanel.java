@@ -1,6 +1,7 @@
-package net.projecte.objects.util;
+package net.projecte.objects.util.animated;
 
 import net.projecte.gui.util.WindowContext;
+import net.projecte.objects.util.Panel;
 
 import java.awt.image.BufferedImage;
 
@@ -10,7 +11,7 @@ public class AnimatedPanel extends Panel {
 	private final int frameRate;
 	private int currentFrame;
 	private int frameDelay;
-	protected AnimatedPanel(int IX, int IY, BufferedImage[] animatedPanelImageList, int animatedPanelFrameRate) {
+	protected AnimatedPanel(BufferedImage[] animatedPanelImageList, int IX, int IY, int animatedPanelFrameRate) {
 		super(animatedPanelImageList[0], IX, IY);
 		imageList = animatedPanelImageList;
 		maxFrame = imageList.length;

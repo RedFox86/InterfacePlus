@@ -10,13 +10,13 @@ public class PanelBuilder extends RenderableObjectBuilder<Panel, PanelBuilder> {
 	}
 
 	@Override
-	public PanelBuilder x(int objX) {
-		return super.setX(objX);
+	public PanelBuilder x(int bX) {
+		return super.setX(bX);
 	}
 
 	@Override
-	public PanelBuilder y(int objY) {
-		return super.setY(objY);
+	public PanelBuilder y(int bY) {
+		return super.setY(bY);
 	}
 
 	@Override

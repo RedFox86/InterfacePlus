@@ -1,4 +1,4 @@
-package net.projecte.objects.util;
+package net.projecte.objects.util.button;
 
 import net.projecte.BufferedImageManager;
 import net.projecte.Logger;
