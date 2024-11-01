@@ -6,25 +6,25 @@ import java.awt.image.BufferedImage;
 
 @SuppressWarnings("unused")
 public class RenderableObject {
-	protected BufferedImage displayImg;
+	protected BufferedImage displayImage;
 	private int x;
 	private int y;
 	private final int sizeX;
 	private final int sizeY;
-	protected RenderableObject(BufferedImage objectImg, int IX, int IY) {
-		x = IX;
-		y = IY;
-		displayImg = objectImg;
-		if (objectImg != null) {
-			sizeX = displayImg.getWidth();
-			sizeY = displayImg.getHeight();
+	protected RenderableObject(BufferedImage renderableObjectImage, int renderableObjectX, int renderableObjectY) {
+		x = renderableObjectX;
+		y = renderableObjectY;
+		displayImage = renderableObjectImage;
+		if (renderableObjectImage != null) {
+			sizeX = displayImage.getWidth();
+			sizeY = displayImage.getHeight();
 		} else {
 			sizeX = 0;
 			sizeY = 0;
 		}
 	}
 	private void drawImage(WindowContext context) {
-		context.getGraphics2D().drawImage(displayImg, x, y, sizeX, sizeY, null);
+		context.getGraphics2D().drawImage(displayImage, x, y, sizeX, sizeY, null);
 	}
 	public void setX(int IX) {
 		x = IX;

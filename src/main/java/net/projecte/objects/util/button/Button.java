@@ -31,17 +31,17 @@ public class Button extends RenderableObject {
 			if (MouseHandler.mouseDown) {
 				if (!buttonDown || holdTrigger) {
 					buttonDown = true;
-					displayImg = clickImg;
+					displayImage = clickImg;
 					for (Task t : taskList) {
 						t.execute();
 					}
 				}
 			} else {
-				displayImg = hoverImg;
+				displayImage = hoverImg;
 				buttonDown = false;
 			}
 		} else {
-			displayImg = defaultImg;
+			displayImage = defaultImg;
 		}
 	}
 }

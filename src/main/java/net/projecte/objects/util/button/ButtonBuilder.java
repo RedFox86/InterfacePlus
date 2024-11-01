@@ -13,7 +13,7 @@ public class ButtonBuilder extends RenderableObjectBuilder<Button, ButtonBuilder
 	private boolean holdTrigger = false;
 	public ButtonBuilder(Interface i, String imgPath) {
 		super(i, imgPath);
-		imgs = new BufferedImage[]{img, img, img};
+		imgs = new BufferedImage[]{displayImage, displayImage, displayImage};
 	}
 	@Override
 	public ButtonBuilder y(int objY) {

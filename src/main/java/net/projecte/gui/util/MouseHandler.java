@@ -32,11 +32,8 @@ public class MouseHandler implements MouseListener {
 	public void mouseExited(MouseEvent e) {
 
 	}
-	public static Point getMouseLocation() {
-		return MouseInfo.getPointerInfo().getLocation();
-	}
 	public static boolean overlaps(RenderableObject object, WindowContext context) {
-		Point mouseLocation = getMouseLocation();
+		Point mouseLocation = MouseInfo.getPointerInfo().getLocation();
 		Point windowLocation = context.getLocation();
 		mouseLocation.x-=windowLocation.x;
 		mouseLocation.y-=windowLocation.y;

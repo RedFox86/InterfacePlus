@@ -21,6 +21,6 @@ public class NodePanel extends RenderableObject {
 		} else {
 			currentFrame++;
 		}
-		displayImg = imageList[currentFrame];
+		displayImage = imageList[currentFrame];
 	}
 }

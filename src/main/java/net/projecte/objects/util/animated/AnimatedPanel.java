@@ -26,7 +26,7 @@ public class AnimatedPanel extends Panel {
 			} else {
 				currentFrame++;
 			}
-			displayImg = imageList[currentFrame];
+			displayImage = imageList[currentFrame];
 		} else {
 			frameDelay++;
 		}
