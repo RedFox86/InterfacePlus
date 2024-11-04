@@ -9,22 +9,23 @@ public class RenderableObject {
 	protected BufferedImage displayImage;
 	private int x;
 	private int y;
-	private final int sizeX;
-	private final int sizeY;
+	private final int width;
+	private final int height;
 	protected RenderableObject(BufferedImage renderableObjectImage, int renderableObjectX, int renderableObjectY) {
 		x = renderableObjectX;
 		y = renderableObjectY;
 		displayImage = renderableObjectImage;
-		if (renderableObjectImage != null) {
-			sizeX = displayImage.getWidth();
-			sizeY = displayImage.getHeight();
-		} else {
-			sizeX = 0;
-			sizeY = 0;
-		}
+		width = displayImage.getWidth();
+		height = displayImage.getHeight();
+	}
+	protected RenderableObject(int renderableObjectWidth, int renderableObjectHeight, int renderableObjectX, int renderableObjectY) {
+		x = renderableObjectX;
+		y = renderableObjectY;
+		width = renderableObjectWidth;
+		height = renderableObjectHeight;
 	}
 	private void drawImage(WindowContext context) {
-		context.getGraphics2D().drawImage(displayImage, x, y, sizeX, sizeY, null);
+		context.getGraphics2D().drawImage(displayImage, x, y, width, height, null);
 	}
 	public void setX(int IX) {
 		x = IX;
@@ -38,11 +39,11 @@ public class RenderableObject {
 	public int getY() {
 		return y;
 	}
-	public int getSizeX() {
-		return sizeX;
+	public int getWidth() {
+		return width;
 	}
-	public int getSizeY() {
-		return sizeY;
+	public int getHeight() {
+		return height;
 	}
 	public void update(WindowContext context) {
 		drawImage(context);

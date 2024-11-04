@@ -21,6 +21,13 @@ public class Button extends RenderableObject {
 		clickImg = objectImgs[2];
 		holdTrigger = renderableObjectHoldTrigger;
 	}
+	protected Button(int buttonWidth, int buttonHeight, int IX, int IY, boolean renderableObjectHoldTrigger) {
+		super(buttonWidth, buttonHeight, IX, IY);
+		defaultImg = null;
+		hoverImg = null;
+		clickImg = null;
+		holdTrigger = renderableObjectHoldTrigger;
+	}
 	public void onClick(Task t) {
 		taskList.add(t);
 	}

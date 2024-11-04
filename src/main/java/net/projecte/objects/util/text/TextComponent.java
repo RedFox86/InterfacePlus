@@ -10,8 +10,8 @@ public class TextComponent extends RenderableObject {
 	private Font displayFont;
 	private Color displayColor;
 	private String displayText;
-	protected TextComponent(String textComponentDisplayText, int IX, int IY, Color textComponentColor, String textComponentFontName, int textComponentFontSize, int textComponentStyle) {
-		super(null, IX, IY);
+	protected TextComponent(String textComponentDisplayText, int textComponentWidth, int textComponentHeight, int IX, int IY, Color textComponentColor, String textComponentFontName, int textComponentFontSize, int textComponentStyle) {
+		super(textComponentWidth, textComponentHeight, IX, IY);
 		displayText = textComponentDisplayText;
 		displayColor = textComponentColor;
 		displayFont = new Font(textComponentFontName, textComponentStyle, textComponentFontSize);

@@ -14,7 +14,7 @@ public class Interface {
 	private final JFrame window;
 	private final DisplayPanel panel;
 
-	public Interface(String title, Dimension size, Color background, int FPS) {
+	protected Interface(String title, Dimension size, Color background, int FPS) {
 		window = new JFrame();
 		window.setResizable(false);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

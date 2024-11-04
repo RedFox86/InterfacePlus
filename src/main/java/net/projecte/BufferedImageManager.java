@@ -9,9 +9,9 @@ public class BufferedImageManager {
 	public static BufferedImage getImage(String imgPath) {
 		try {
 			img = ImageIO.read(BufferedImageManager.class.getResourceAsStream(imgPath));
-			Logger.log("Image + " + imgPath + " sucessfully loaded.");
+			Logger.log("Image " + imgPath + " sucessfully loaded.");
 		} catch (IOException e) {
-			Logger.log("Failed to load image " + imgPath);
+			Logger.error("Failed to load image " + imgPath);
 			e.printStackTrace();
 		}
 		return img;
