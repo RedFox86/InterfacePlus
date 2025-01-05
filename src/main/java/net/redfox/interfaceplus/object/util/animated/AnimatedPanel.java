@@ -1,7 +1,7 @@
-package net.redfox.interfaceplus.objects.util.animated;
+package net.redfox.interfaceplus.object.util.animated;
 
 import net.redfox.interfaceplus.gui.util.WindowContext;
-import net.redfox.interfaceplus.objects.util.Panel;
+import net.redfox.interfaceplus.object.util.Panel;
 
 import java.awt.image.BufferedImage;
 

@@ -4,7 +4,7 @@ import net.redfox.interfaceplus.gui.display.Interface;
 import net.redfox.interfaceplus.gui.util.KeyHandler;
 import net.redfox.interfaceplus.gui.util.MouseHandler;
 import net.redfox.interfaceplus.gui.util.WindowContext;
-import net.redfox.interfaceplus.objects.Renderer;
+import net.redfox.interfaceplus.object.Renderer;
 
 import javax.swing.*;
 import java.awt.*;

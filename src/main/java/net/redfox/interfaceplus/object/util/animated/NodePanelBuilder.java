@@ -1,9 +1,9 @@
-package net.redfox.interfaceplus.objects.util.animated;
+package net.redfox.interfaceplus.object.util.animated;
 
 import net.redfox.interfaceplus.BufferedImageManager;
 import net.redfox.interfaceplus.Logger;
 import net.redfox.interfaceplus.gui.display.Interface;
-import net.redfox.interfaceplus.objects.RenderableObjectBuilder;
+import net.redfox.interfaceplus.object.RenderableObjectBuilder;
 
 import java.awt.image.BufferedImage;
 

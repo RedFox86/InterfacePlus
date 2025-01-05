@@ -1,8 +1,8 @@
-package net.redfox.interfaceplus.objects.util.text;
+package net.redfox.interfaceplus.object.util.text;
 
 import net.redfox.interfaceplus.Logger;
 import net.redfox.interfaceplus.gui.display.Interface;
-import net.redfox.interfaceplus.objects.RenderableObjectBuilder;
+import net.redfox.interfaceplus.object.RenderableObjectBuilder;
 
 import java.awt.*;
 

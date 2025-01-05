@@ -1,4 +1,4 @@
-package net.redfox.interfaceplus.objects;
+package net.redfox.interfaceplus.object;
 
 import net.redfox.interfaceplus.gui.util.WindowContext;
 

@@ -1,4 +1,4 @@
-package net.redfox.interfaceplus;
+package net.redfox.interfaceplus.task;
 
 public interface Task {
 	void execute();

@@ -1,9 +1,9 @@
-package net.redfox.interfaceplus.objects.util.button;
+package net.redfox.interfaceplus.object.util.button;
 
-import net.redfox.interfaceplus.Task;
+import net.redfox.interfaceplus.task.Task;
 import net.redfox.interfaceplus.gui.util.MouseHandler;
 import net.redfox.interfaceplus.gui.util.WindowContext;
-import net.redfox.interfaceplus.objects.RenderableObject;
+import net.redfox.interfaceplus.object.RenderableObject;
 
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;

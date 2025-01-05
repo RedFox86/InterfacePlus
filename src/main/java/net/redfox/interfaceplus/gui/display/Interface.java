@@ -1,9 +1,9 @@
 package net.redfox.interfaceplus.gui.display;
 
-import net.redfox.interfaceplus.Task;
+import net.redfox.interfaceplus.task.Task;
 import net.redfox.interfaceplus.gui.DisplayPanel;
 import net.redfox.interfaceplus.gui.util.WindowContext;
-import net.redfox.interfaceplus.objects.Renderer;
+import net.redfox.interfaceplus.object.Renderer;
 
 import javax.swing.*;
 import java.awt.*;

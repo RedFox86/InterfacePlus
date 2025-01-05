@@ -1,6 +1,6 @@
 package net.redfox.interfaceplus.gui.util;
 
-import net.redfox.interfaceplus.objects.RenderableObject;
+import net.redfox.interfaceplus.object.RenderableObject;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;

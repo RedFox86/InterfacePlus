@@ -1,7 +1,7 @@
-package net.redfox.interfaceplus.objects.util.text;
+package net.redfox.interfaceplus.object.util.text;
 
 import net.redfox.interfaceplus.gui.util.WindowContext;
-import net.redfox.interfaceplus.objects.RenderableObject;
+import net.redfox.interfaceplus.object.RenderableObject;
 
 import java.awt.*;
 

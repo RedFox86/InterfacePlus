@@ -1,8 +1,8 @@
-package net.redfox.interfaceplus.objects.util;
+package net.redfox.interfaceplus.object.util;
 
 import net.redfox.interfaceplus.Logger;
 import net.redfox.interfaceplus.gui.display.Interface;
-import net.redfox.interfaceplus.objects.RenderableObjectBuilder;
+import net.redfox.interfaceplus.object.RenderableObjectBuilder;
 
 public class PanelBuilder extends RenderableObjectBuilder<Panel, PanelBuilder> {
 	/**
