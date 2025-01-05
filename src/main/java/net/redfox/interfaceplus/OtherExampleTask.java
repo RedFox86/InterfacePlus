@@ -3,7 +3,7 @@ package net.redfox.interfaceplus;
 import net.redfox.interfaceplus.object.util.animated.NodePanel;
 import net.redfox.interfaceplus.task.Task;
 
-public class OtherExampleTask extends Task {
+public class OtherExampleTask implements Task {
 	private final NodePanel object;
 	public OtherExampleTask(NodePanel r) {
 		object = r;
