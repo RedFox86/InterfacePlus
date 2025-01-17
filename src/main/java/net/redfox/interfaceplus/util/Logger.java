@@ -1,10 +1,10 @@
-package net.redfox.interfaceplus;
+package net.redfox.interfaceplus.util;
 
 import java.time.LocalDateTime;
 import java.util.function.Supplier;
 
 public class Logger {
-	static Supplier<String> time = () -> {
+	private static final Supplier<String> time = () -> {
 		LocalDateTime now = LocalDateTime.now();
 		return now.getHour() + ":" + now.getMinute() + ":" + now.getSecond();
 	};

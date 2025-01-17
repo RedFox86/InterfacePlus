@@ -1,6 +1,6 @@
 package net.redfox.interfaceplus.object;
 
-import net.redfox.interfaceplus.BufferedImageManager;
+import net.redfox.interfaceplus.util.BufferedImageManager;
 import net.redfox.interfaceplus.gui.display.Interface;
 
 import java.awt.image.BufferedImage;
@@ -10,16 +10,16 @@ public abstract class RenderableObjectBuilder<K extends RenderableObject, T exte
 	protected final BufferedImage displayImage;
 	protected int x;
 	protected int y;
-	protected final Interface builderInterface;
+	protected final Interface bInterface;
 
 	/**
-	 * @param renderableObjectBuilderInterface The interface that the RenderableObject will be displayed on - used to add to the objects list in Renderer.
+	 * @param bInterface The interface that the RenderableObject will be displayed on - used to add to the objects list in Renderer.
 	 * @param imagePath The path for the image that will be loaded and displayed on the screen.
 	 */
-	protected RenderableObjectBuilder(Interface renderableObjectBuilderInterface, String imagePath) {
+	protected RenderableObjectBuilder(Interface bInterface, String imagePath) {
 		this.x = 0;
 		this.y = 0;
-		builderInterface = renderableObjectBuilderInterface;
+		this.bInterface = bInterface;
 		if (imagePath != null) {
 			displayImage = BufferedImageManager.getImage(imagePath);
 		} else {
@@ -29,16 +29,16 @@ public abstract class RenderableObjectBuilder<K extends RenderableObject, T exte
 	public abstract T x(int objX);
 	public abstract T y(int objY);
 
-	protected T setX(int objX) {
-		this.x = objX;
+	protected T setX(int x) {
+		this.x = x;
 		return (T)this;
 	}
-	protected T setY(int objY) {
-		this.y = objY;
+	protected T setY(int y) {
+		this.y = y;
 		return (T)this;
 	}
 	protected K build(K k) {
-		builderInterface.getRenderer().addRenderableObject(k);
+		bInterface.getRenderer().addRenderableObject(k);
 		return k;
 	}
 

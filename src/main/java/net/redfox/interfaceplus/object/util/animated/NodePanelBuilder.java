@@ -1,24 +1,29 @@
 package net.redfox.interfaceplus.object.util.animated;
 
-import net.redfox.interfaceplus.BufferedImageManager;
-import net.redfox.interfaceplus.Logger;
+import net.redfox.interfaceplus.util.BufferedImageManager;
+import net.redfox.interfaceplus.util.Logger;
 import net.redfox.interfaceplus.gui.display.Interface;
 import net.redfox.interfaceplus.object.RenderableObjectBuilder;
 
 import java.awt.image.BufferedImage;
 
 public class NodePanelBuilder extends RenderableObjectBuilder<NodePanel, NodePanelBuilder> {
-	private final BufferedImage[] imageList;
+	private final BufferedImage[] displayImages;
 	private boolean repeat;
-	public NodePanelBuilder(Interface i, String[] nodePanelImageList) {
-		super(i, nodePanelImageList[0]);
-		imageList = new BufferedImage[nodePanelImageList.length];
-		for (int j = 0; j < nodePanelImageList.length; j++) {
-			imageList[j] = BufferedImageManager.getImage(nodePanelImageList[j]);
+	/**
+	 * @param bInterface The interface that the NodePanel will be displayed on - used to add to the objects list in Renderer.
+	 * @param displayImages The array of images that will be loaded and displayed on the screen.
+	 */
+	public NodePanelBuilder(Interface bInterface, String[] displayImages) {
+		super(bInterface, displayImages[0]);
+		this.displayImages = new BufferedImage[displayImages.length];
+		for (int j = 0; j < displayImages.length; j++) {
+			this.displayImages[j] = BufferedImageManager.getImage(displayImages[j]);
 		}
+		repeat = true;
 	}
-	public NodePanelBuilder repeat(boolean objectRepeat) {
-		repeat = objectRepeat;
+	public NodePanelBuilder repeat(boolean repeat) {
+		this.repeat = repeat;
 		return this;
 	}
 
@@ -35,6 +40,6 @@ public class NodePanelBuilder extends RenderableObjectBuilder<NodePanel, NodePan
 	@Override
 	public NodePanel build() {
 		Logger.log("Node Panel successfully built.");
-		return super.build(new NodePanel(imageList, x, y, repeat));
+		return super.build(new NodePanel(displayImages, x, y, repeat));
 	}
 }

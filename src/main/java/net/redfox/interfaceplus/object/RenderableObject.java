@@ -11,27 +11,27 @@ public class RenderableObject {
 	private int y;
 	private final int width;
 	private final int height;
-	protected RenderableObject(BufferedImage renderableObjectImage, int renderableObjectX, int renderableObjectY) {
-		x = renderableObjectX;
-		y = renderableObjectY;
-		displayImage = renderableObjectImage;
-		width = displayImage.getWidth();
-		height = displayImage.getHeight();
+	protected RenderableObject(BufferedImage displayImage, int x, int y) {
+		this.x = x;
+		this.y = y;
+		this.displayImage = displayImage;
+		this.width = displayImage.getWidth();
+		this.height = displayImage.getHeight();
 	}
-	protected RenderableObject(int renderableObjectWidth, int renderableObjectHeight, int renderableObjectX, int renderableObjectY) {
-		x = renderableObjectX;
-		y = renderableObjectY;
-		width = renderableObjectWidth;
-		height = renderableObjectHeight;
+	protected RenderableObject(int width, int height, int x, int y) {
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
 	}
 	private void drawImage(WindowContext context) {
 		context.getGraphics2D().drawImage(displayImage, x, y, width, height, null);
 	}
-	public void setX(int IX) {
-		x = IX;
+	public void setX(int x) {
+		this.x = x;
 	}
-	public void setY(int IY) {
-		y = IY;
+	public void setY(int y) {
+		this.y = y;
 	}
 	public int getX() {
 		return x;

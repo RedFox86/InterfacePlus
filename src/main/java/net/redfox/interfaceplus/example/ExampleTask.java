@@ -1,4 +1,4 @@
-package net.redfox.interfaceplus;
+package net.redfox.interfaceplus.example;
 
 import net.redfox.interfaceplus.object.RenderableObject;
 import net.redfox.interfaceplus.task.Task;

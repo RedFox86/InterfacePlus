@@ -1,54 +1,62 @@
 package net.redfox.interfaceplus.object.util.text;
 
-import net.redfox.interfaceplus.Logger;
+import net.redfox.interfaceplus.util.Logger;
 import net.redfox.interfaceplus.gui.display.Interface;
 import net.redfox.interfaceplus.object.RenderableObjectBuilder;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class TextComponentBuilder extends RenderableObjectBuilder<TextComponent, TextComponentBuilder> {
-	private String displayText = "Untitled";
-	private Color displayColor = Color.BLACK;
-	private String fontName = "TimesRoman";
-	private int displaySize = 10;
-	private int displayMode = 0;
-	public TextComponentBuilder(Interface i) {
-		super(i, null);
+	private String contents;
+	private Color color;
+	private String font;
+	private int size;
+	private int mode;
+	/**
+	 * @param bInterface The interface that the TextComponent will be displayed on - used to add to the objects list in Renderer.
+	 */
+	public TextComponentBuilder(Interface bInterface) {
+		super(bInterface, null);
+		mode = 0;
+		size = 10;
+		font = "TimesRoman";
+		color = Color.BLACK;
+		contents = "Untitled";
 	}
 	
 	@Override
-	public TextComponentBuilder x(int objX) {
-		return super.setX(objX);
+	public TextComponentBuilder x(int x) {
+		return super.setX(x);
 	}
 	
 	@Override
-	public TextComponentBuilder y(int objY) {
-		return super.setY(objY);
+	public TextComponentBuilder y(int y) {
+		return super.setY(y);
 	}
 	public TextComponentBuilder setText(String text) {
-		displayText = text;
+		contents = text;
 		return this;
 	}
 	public TextComponentBuilder setColor(Color color) {
-		displayColor = color;
+		this.color = color;
 		return this;
 	}
 	public TextComponentBuilder setFont(String name) {
-		fontName = name;
+		font = name;
 		return this;
 	}
 	public TextComponentBuilder setSize(int size) {
-		displaySize = size;
+		this.size = size;
 		return this;
 	}
 	public TextComponentBuilder setStyle(int mode) {
-		displayMode = mode;
+		this.mode = mode;
 		return this;
 	}
 	
 	@Override
 	public TextComponent build() {
 		Logger.log("Text Component successfully built.");
-		return super.build(new TextComponent(displayText, 100, displayText.length()*20, x, y, displayColor, fontName, displaySize, displayMode));
+		return super.build(new TextComponent(contents, 100, contents.length()*20, x, y, color, font, size, mode));
 	}
 }

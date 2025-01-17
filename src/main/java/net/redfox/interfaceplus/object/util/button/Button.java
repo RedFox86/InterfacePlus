@@ -14,19 +14,19 @@ public class Button extends RenderableObject {
 	private final BufferedImage defaultImg;
 	private final boolean holdTrigger;
 	private boolean buttonDown = false;
-	protected Button(BufferedImage[] objectImgs, int IX, int IY, boolean renderableObjectHoldTrigger) {
-		super(objectImgs[0], IX, IY);
-		defaultImg = objectImgs[0];
-		hoverImg = objectImgs[1];
-		clickImg = objectImgs[2];
-		holdTrigger = renderableObjectHoldTrigger;
+	protected Button(BufferedImage[] displayImages, int x, int y, boolean holdTrigger) {
+		super(displayImages[0], x, y);
+		defaultImg = displayImages[0];
+		hoverImg = displayImages[1];
+		clickImg = displayImages[2];
+		this.holdTrigger = holdTrigger;
 	}
-	protected Button(int buttonWidth, int buttonHeight, int IX, int IY, boolean renderableObjectHoldTrigger) {
-		super(buttonWidth, buttonHeight, IX, IY);
+	protected Button(int width, int height, int x, int y, boolean holdTrigger) {
+		super(width, height, x, y);
 		defaultImg = null;
 		hoverImg = null;
 		clickImg = null;
-		holdTrigger = renderableObjectHoldTrigger;
+		this.holdTrigger = holdTrigger;
 	}
 	public void onClick(Task t) {
 		taskList.add(t);
