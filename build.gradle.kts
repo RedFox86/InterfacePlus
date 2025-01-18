@@ -2,8 +2,8 @@ plugins {
     id("java")
 }
 
-group = "net.projecte"
-version = "1.0-SNAPSHOT"
+group = "net.redfox.interfaceplus"
+version = "1.0.1"
 
 repositories {
     mavenCentral()

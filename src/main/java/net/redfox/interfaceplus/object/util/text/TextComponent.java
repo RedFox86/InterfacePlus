@@ -36,6 +36,6 @@ public class TextComponent extends RenderableObject {
 		Graphics2D g = context.getGraphics2D();
 		g.setFont(font);
 		g.setColor(color);
-		g.drawString(contents, this.getX(), this.getY());
+		g.drawString(contents, (int)(this.getX()+0.5), (int)(this.getY()+0.5));
 	}
 }
