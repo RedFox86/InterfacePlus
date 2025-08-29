@@ -1,9 +1,10 @@
 plugins {
     id("java")
+    id("com.diffplug.spotless") version "7.0.3"
 }
 
 group = "net.redfox.interfaceplus"
-version = "1.0.1"
+version = "1.0.2"
 
 repositories {
     mavenCentral()
@@ -16,4 +17,12 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+spotless {
+    java {
+        removeUnusedImports()
+        googleJavaFormat().reflowLongStrings(false).aosp()
+        formatAnnotations()
+    }
 }

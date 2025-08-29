@@ -1,19 +1,23 @@
 package net.redfox.interfaceplus.util;
 
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.io.InputStream;
+import javax.imageio.ImageIO;
 
 public class BufferedImageManager {
-	static BufferedImage img = null;
-	public static BufferedImage getImage(String imgPath) {
-		try {
-			img = ImageIO.read(BufferedImageManager.class.getResourceAsStream(imgPath));
-			Logger.log("Image " + imgPath + " sucessfully loaded.");
-		} catch (IOException e) {
-			Logger.error("Failed to load image " + imgPath);
-			e.printStackTrace();
-		}
-		return img;
-	}
+    public static BufferedImage getImage(String imgPath) {
+        try {
+            InputStream stream = BufferedImageManager.class.getResourceAsStream(imgPath);
+            if (stream == null) {
+                Logger.warn("Image not found at path " + imgPath);
+            } else {
+                Logger.log("Image " + imgPath + " successfully loaded.");
+                return ImageIO.read(stream);
+            }
+        } catch (IOException e) {
+            Logger.error("Failed to load an image because it likely didn't exist: " + imgPath);
+        }
+        return null;
+    }
 }
