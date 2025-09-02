@@ -3,7 +3,7 @@ package net.redfox.interfaceplus.gui.util;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import net.redfox.interfaceplus.object.standard.RenderableObject;
+import net.redfox.interfaceplus.object.RenderableImage;
 
 public class MouseHandler implements MouseListener {
     public static boolean mouseDown = false;
@@ -27,7 +27,7 @@ public class MouseHandler implements MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {}
 
-    public static boolean overlaps(RenderableObject object, WindowContext context) {
+    public static boolean overlaps(RenderableImage object, WindowContext context) {
         Point mouseLocation = MouseInfo.getPointerInfo().getLocation();
         Point windowLocation = context.getLocation();
         mouseLocation.x -= windowLocation.x;

@@ -2,6 +2,9 @@ package net.redfox.interfaceplus.object.util.animated;
 
 import java.awt.image.BufferedImage;
 import net.redfox.interfaceplus.gui.util.WindowContext;
+import net.redfox.interfaceplus.math.Vector2;
+import net.redfox.interfaceplus.object.RenderableImage;
+import net.redfox.interfaceplus.object.Renderer;
 import net.redfox.interfaceplus.object.util.Panel;
 
 public class AnimatedPanel extends Panel {
@@ -11,8 +14,8 @@ public class AnimatedPanel extends Panel {
     private int currentFrame;
     private int frameDelay;
 
-    protected AnimatedPanel(BufferedImage[] displayImages, int x, int y, int frameRate) {
-        super(displayImages[0], x, y);
+    protected AnimatedPanel(BufferedImage[] displayImages, Vector2 position, int frameRate) {
+        super(displayImages[0], position);
         this.displayImages = displayImages;
         maxFrame = this.displayImages.length;
         this.frameRate = frameRate;
@@ -37,5 +40,33 @@ public class AnimatedPanel extends Panel {
     @Override
     public String getName() {
         return "AnimatedPanel";
+    }
+
+    public static class Builder extends Panel.Builder {
+        private BufferedImage[] displayImages;
+        private int maxFrame;
+        private int frameRate;
+        private int currentFrame;
+        private int frameDelay;
+        public Builder(Renderer renderer) {
+            super(renderer);
+        }
+
+        @Override
+        public AnimatedPanel.Builder position(Vector2 position) {
+            super.setPosition(position);
+            return this;
+        }
+
+        @Override
+        public AnimatedPanel.Builder displayImage(BufferedImage displayImage) {
+            super.setDisplayImage(displayImage);
+            return this;
+        }
+
+        @Override
+        public AnimatedPanel build() {
+            return super.build(new AnimatedPanel(displayImage, position));
+        }
     }
 }

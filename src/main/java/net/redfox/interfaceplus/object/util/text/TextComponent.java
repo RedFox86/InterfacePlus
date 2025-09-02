@@ -4,10 +4,10 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import net.redfox.interfaceplus.gui.util.WindowContext;
-import net.redfox.interfaceplus.object.standard.RenderableObject;
+import net.redfox.interfaceplus.object.RenderableImage;
 
 @SuppressWarnings("unused")
-public class TextComponent extends RenderableObject {
+public class TextComponent extends RenderableImage {
     private Font font;
     private Color color;
     private String contents;

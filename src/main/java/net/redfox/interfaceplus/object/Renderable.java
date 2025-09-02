@@ -1,5 +1,7 @@
 package net.redfox.interfaceplus.object;
 
+import net.redfox.interfaceplus.gui.util.WindowContext;
+
 public interface Renderable {
-    TaskType getType();
+    void render(WindowContext context);
 }

@@ -4,10 +4,10 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import net.redfox.interfaceplus.gui.util.MouseHandler;
 import net.redfox.interfaceplus.gui.util.WindowContext;
-import net.redfox.interfaceplus.object.standard.RenderableObject;
+import net.redfox.interfaceplus.object.RenderableImage;
 import net.redfox.interfaceplus.task.Task;
 
-public class Button extends RenderableObject {
+public class Button extends RenderableImage {
     private final ArrayList<Task> taskList = new ArrayList<>();
     private final BufferedImage hoverImg, clickImg;
     private final BufferedImage defaultImg;

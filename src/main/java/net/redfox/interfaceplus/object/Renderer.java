@@ -2,10 +2,8 @@ package net.redfox.interfaceplus.object;
 
 import java.util.ArrayList;
 
-import net.redfox.interfaceplus.exception.PointerPointsToNothingException;
+import net.redfox.interfaceplus.exception.RendererNotFoundException;
 import net.redfox.interfaceplus.gui.util.WindowContext;
-import net.redfox.interfaceplus.object.standard.RenderableObject;
-import net.redfox.interfaceplus.util.Logger;
 
 public class Renderer {
     private final ArrayList<Renderable> objects;
@@ -26,27 +24,9 @@ public class Renderer {
             renderableObjectQueue.clear();
         }
 
-        for (int i = 0; i < objects.size(); i++) {
-            switch (objects.get(i).getType()) {
-                case RUN -> ((RenderableObject)objects.get(i)).update(context);
-                case LAST -> {
-                    try {
-                        getLastRenderableObject(i).update(context);
-                    } catch (PointerPointsToNothingException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
+        for (Renderable r : objects) {
+            r.render(context);
         }
-    }
-
-    private RenderableObject getLastRenderableObject(int startingIndex) throws PointerPointsToNothingException {
-        for (int i = startingIndex - 1; i > 0; i--) {
-            if (objects.get(i) instanceof RenderableObject r) {
-                return r;
-            }
-        }
-        throw new PointerPointsToNothingException("Pointer pointed backwards to nothing at starting index " + startingIndex);
     }
 
     /**
@@ -58,13 +38,12 @@ public class Renderer {
         renderableObjectQueue.add(object);
     }
 
-    public static Renderer getRenderer(int identifier) {
+    public static Renderer getRenderer(int identifier) throws RendererNotFoundException {
         for (Renderer r : renderers) {
             if (r.identifier == identifier) {
                 return r;
             }
         }
-        Logger.error("Renderer with id " + identifier + " was searched for, but not found!");
-        return null;
+        throw new RendererNotFoundException("Renderer with identifier " + identifier + " not found!");
     }
 }

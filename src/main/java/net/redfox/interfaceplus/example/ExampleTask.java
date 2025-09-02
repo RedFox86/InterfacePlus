@@ -1,12 +1,12 @@
 package net.redfox.interfaceplus.example;
 
-import net.redfox.interfaceplus.object.standard.RenderableObject;
+import net.redfox.interfaceplus.object.RenderableImage;
 import net.redfox.interfaceplus.task.Task;
 
 public class ExampleTask implements Task {
-    private final RenderableObject object;
+    private final RenderableImage object;
 
-    public ExampleTask(RenderableObject r) {
+    public ExampleTask(RenderableImage r) {
         object = r;
     }
 
