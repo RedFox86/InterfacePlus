@@ -26,7 +26,7 @@ public class DisplayPanel extends JPanel implements Runnable {
         this.addMouseListener(new MouseHandler());
         this.setFocusable(true);
         this.panelInterface = i;
-        this.renderer = new Renderer(i.getIdentifier());
+        this.renderer = new Renderer();
     }
 
     public void startGameThread() {

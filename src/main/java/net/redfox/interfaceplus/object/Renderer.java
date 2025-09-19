@@ -1,49 +1,39 @@
 package net.redfox.interfaceplus.object;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
-import net.redfox.interfaceplus.exception.RendererNotFoundException;
 import net.redfox.interfaceplus.gui.util.WindowContext;
 
 public class Renderer {
     private final ArrayList<Renderable> objects;
     private final ArrayList<Renderable> renderableObjectQueue;
-    private final int identifier;
-    private static final ArrayList<Renderer> renderers = new ArrayList<>();
+    private final Logger logger;
 
-    public Renderer(int identifier) {
+    public Renderer() {
         objects = new ArrayList<>();
         renderableObjectQueue = new ArrayList<>();
-        this.identifier = identifier;
-        renderers.add(this);
+        logger = Logger.getLogger("Renderer");
+    }
+
+    public Logger getLogger() {
+        return logger;
     }
 
     public void renderObjects(WindowContext context) {
-        if (!renderableObjectQueue.isEmpty()) {
-            objects.addAll(renderableObjectQueue);
-            renderableObjectQueue.clear();
-        }
+        if (!renderableObjectQueue.isEmpty()) updateRenderableObjectList();
 
         for (Renderable r : objects) {
             r.render(context);
         }
     }
 
-    /**
-     * Registers a new RenderableObject with this Renderer so that it is displayed on screen.
-     *
-     * @param object The RenderableObject to be displayed.
-     */
-    public void register(Renderable object) {
-        renderableObjectQueue.add(object);
+    private void updateRenderableObjectList() {
+        objects.addAll(renderableObjectQueue);
+        renderableObjectQueue.clear();
     }
 
-    public static Renderer getRenderer(int identifier) throws RendererNotFoundException {
-        for (Renderer r : renderers) {
-            if (r.identifier == identifier) {
-                return r;
-            }
-        }
-        throw new RendererNotFoundException("Renderer with identifier " + identifier + " not found!");
+    public void register(Renderable object) {
+        renderableObjectQueue.add(object);
     }
 }

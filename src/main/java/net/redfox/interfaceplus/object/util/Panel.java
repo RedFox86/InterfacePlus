@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 
 import net.redfox.interfaceplus.math.Vector2;
 import net.redfox.interfaceplus.object.RenderableImage;
+import net.redfox.interfaceplus.object.RenderableObject;
 import net.redfox.interfaceplus.object.Renderer;
 
 public class Panel extends RenderableImage {
