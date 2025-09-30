@@ -20,11 +20,11 @@ public class Button extends RenderableObject {
 
   private boolean buttonDown = false;
 
-  protected Button(BufferedImage[] displayImages, Vector2 position, boolean holdTrigger) {
-    super(new Size2(displayImages[0].getWidth(), displayImages[0].getHeight()), position);
-    defaultImg = displayImages[0];
-    hoverImg = displayImages[1];
-    clickImg = displayImages[2];
+  protected Button(BufferedImage defaultImg, BufferedImage hoverImg, BufferedImage clickImg, Vector2 position, boolean holdTrigger) {
+    super(new Size2(defaultImg.getWidth(), defaultImg.getHeight()), position);
+    this.defaultImg = defaultImg;
+    this.hoverImg = hoverImg;
+    this.clickImg = clickImg;
     this.holdTrigger = holdTrigger;
   }
 
@@ -40,24 +40,34 @@ public class Button extends RenderableObject {
     clickTaskList.add(t);
   }
 
+  private int getState(WindowContext context) {
+    if (MouseHandler.overlaps(this, context)) {
+      if (MouseHandler.isMouseDown()) {
+        return 3;
+      }
+      return 2;
+    }
+    return 1;
+  }
+
   @Override
   public void update(WindowContext context) {
     super.update(context);
-    if (MouseHandler.overlaps(this, context)) {
-      if (MouseHandler.mouseDown) {
+    switch (getState(context)) {
+      case 1 -> drawImage(context, defaultImg);
+      case 2 -> {
+        drawImage(context, hoverImg);
+        buttonDown = false;
+      }
+      case 3 -> {
+        drawImage(context, clickImg);
         if (!buttonDown || holdTrigger) {
           buttonDown = true;
-          drawImage(context, clickImg);
           for (Task t : clickTaskList) {
             t.execute();
           }
         }
-      } else {
-        drawImage(context, hoverImg);
-        buttonDown = false;
       }
-    } else {
-      drawImage(context, defaultImg);
     }
   }
 
@@ -109,7 +119,7 @@ public class Button extends RenderableObject {
 
     @Override
     public Button build() {
-      return super.build(new Button(new BufferedImage[]{defaultImg, hoverImg, clickImg}, position, holdTrigger));
+      return super.build(new Button(defaultImg, hoverImg, clickImg, position, holdTrigger));
     }
   }
 }
