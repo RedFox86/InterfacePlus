@@ -50,3 +50,5 @@ package net.redfox.interfaceplus.object.util.text;
 //        return "TextComponent";
 //    }
 //}
+@SuppressWarnings("unused")
+    @SuppressWarnings("unchecked")

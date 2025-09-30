@@ -3,6 +3,7 @@ package net.redfox.interfaceplus.util;
 import java.time.LocalDateTime;
 import java.util.function.Supplier;
 
+@SuppressWarnings("unused")
 public class Logger {
 	private static final String RED_ANSI = "\u001B[31m";
 	private static final String ANSI_RESET = "\u001B[0m";

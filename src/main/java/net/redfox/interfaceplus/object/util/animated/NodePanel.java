@@ -9,6 +9,7 @@ import net.redfox.interfaceplus.object.RenderableObject;
 import net.redfox.interfaceplus.object.Renderer;
 import net.redfox.interfaceplus.object.util.Panel;
 
+@SuppressWarnings("unused")
 public class NodePanel extends RenderableObject {
     private final BufferedImage[] displayImages;
     private int currentFrame = 0;
@@ -40,6 +41,7 @@ public class NodePanel extends RenderableObject {
     return "";
   }
 
+  @SuppressWarnings("unchecked")
   public static class Builder extends RenderableObject.Builder {
       private BufferedImage[] displayImages;
       private boolean repeat;

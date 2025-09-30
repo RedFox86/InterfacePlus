@@ -7,6 +7,7 @@ import net.redfox.interfaceplus.math.Vector2;
 import java.awt.image.BufferedImage;
 
 public abstract class RenderableImage extends RenderableObject{
+@SuppressWarnings("unused")
   protected BufferedImage displayImage;
   protected RenderableImage(BufferedImage displayImage, Vector2 position) {
     super(new Size2(displayImage.getWidth(), displayImage.getHeight()), position);

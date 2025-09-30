@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import javax.imageio.ImageIO;
 
+@SuppressWarnings("unused")
 public class BufferedImageManager {
     private static final Logger LOGGER = new Logger(BufferedImageManager.class.getName());
 

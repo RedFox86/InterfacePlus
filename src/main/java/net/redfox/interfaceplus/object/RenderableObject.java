@@ -5,6 +5,7 @@ import net.redfox.interfaceplus.gui.util.WindowContext;
 import net.redfox.interfaceplus.math.Size2;
 import net.redfox.interfaceplus.math.Vector2;
 
+@SuppressWarnings("unused")
 public abstract class RenderableObject implements Renderable {
     private final Vector2 position;
     private final Size2 size;

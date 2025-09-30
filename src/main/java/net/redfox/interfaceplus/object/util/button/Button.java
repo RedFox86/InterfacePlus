@@ -11,6 +11,7 @@ import net.redfox.interfaceplus.object.RenderableObject;
 import net.redfox.interfaceplus.object.Renderer;
 import net.redfox.interfaceplus.task.Task;
 
+@SuppressWarnings("unused")
 public class Button extends RenderableObject {
   private final ArrayList<Task> clickTaskList = new ArrayList<>();
   private final BufferedImage hoverImg, clickImg;
@@ -65,6 +66,7 @@ public class Button extends RenderableObject {
     return "Button";
   }
 
+  @SuppressWarnings("unchecked")
   public static class Builder extends RenderableObject.Builder {
     private BufferedImage hoverImg;
     private BufferedImage clickImg;

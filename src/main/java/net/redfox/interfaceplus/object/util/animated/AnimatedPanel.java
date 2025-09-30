@@ -8,6 +8,7 @@ import net.redfox.interfaceplus.object.RenderableObject;
 import net.redfox.interfaceplus.object.Renderer;
 import net.redfox.interfaceplus.object.util.Panel;
 
+@SuppressWarnings("unused")
 public class AnimatedPanel extends RenderableObject {
   private final BufferedImage[] displayImages;
   private final int maxFrame;
@@ -43,6 +44,7 @@ public class AnimatedPanel extends RenderableObject {
     return "";
   }
 
+  @SuppressWarnings("unchecked")
   public static class Builder extends RenderableObject.Builder {
     private BufferedImage[] displayImages;
     private int frameRate;

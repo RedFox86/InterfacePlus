@@ -7,6 +7,7 @@ import net.redfox.interfaceplus.object.RenderableImage;
 import net.redfox.interfaceplus.object.RenderableObject;
 import net.redfox.interfaceplus.object.Renderer;
 
+@SuppressWarnings("unused")
 public class Panel extends RenderableImage {
     protected Panel(BufferedImage displayImage, Vector2 position) {
         super(displayImage, position);
@@ -17,6 +18,7 @@ public class Panel extends RenderableImage {
         return "Panel";
     }
 
+    @SuppressWarnings("unchecked")
     public static class Builder extends RenderableImage.Builder {
         public Builder(Renderer renderer) {
             super(renderer);
