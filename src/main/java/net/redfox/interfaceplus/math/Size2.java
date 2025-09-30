@@ -1,8 +1,8 @@
 package net.redfox.interfaceplus.math;
 
 public class Size2 {
-  private int width;
-  private int height;
+  private final int width;
+  private final int height;
 
   public Size2(int width, int height) {
     this.width = width;
