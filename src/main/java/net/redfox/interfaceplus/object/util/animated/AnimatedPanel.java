@@ -6,7 +6,6 @@ import net.redfox.interfaceplus.math.Size2;
 import net.redfox.interfaceplus.math.Vector2;
 import net.redfox.interfaceplus.object.RenderableObject;
 import net.redfox.interfaceplus.object.Renderer;
-import net.redfox.interfaceplus.object.util.Panel;
 
 @SuppressWarnings("unused")
 public class AnimatedPanel extends RenderableObject {
