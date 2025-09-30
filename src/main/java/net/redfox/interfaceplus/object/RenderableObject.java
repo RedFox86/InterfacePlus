@@ -72,7 +72,7 @@ public abstract class RenderableObject implements Renderable {
     }
 
     protected abstract static class Builder {
-        protected Vector2 position;
+        protected final Vector2 position;
         private final Renderer renderer;
 
         public Builder(Renderer renderer) {
