@@ -7,9 +7,9 @@ public class Logger {
 	private static final String RED_ANSI = "\u001B[31m";
 	private static final String ANSI_RESET = "\u001B[0m";
 
-	private String name;
+	private final String name;
 
-	private final Supplier<String> time = () -> {
+	private static final Supplier<String> time = () -> {
 		LocalDateTime now = LocalDateTime.now();
 		String hours = (now.getHour() >= 10) ? ""+now.getHour() : "0"+now.getHour();
 		String minutes = (now.getMinute() >= 10) ? ""+now.getMinute() : "0"+now.getMinute();
