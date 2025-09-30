@@ -6,7 +6,7 @@ import java.awt.event.MouseListener;
 import net.redfox.interfaceplus.object.RenderableObject;
 
 public class MouseHandler implements MouseListener {
-    public static boolean mouseDown = false;
+    private static boolean mouseDown = false;
 
     @Override
     public void mouseClicked(MouseEvent e) {}
@@ -36,5 +36,9 @@ public class MouseHandler implements MouseListener {
                 && object.getX() + object.getWidth() >= mouseLocation.x
                 && object.getY() <= mouseLocation.y
                 && object.getY() + object.getHeight() >= mouseLocation.y;
+    }
+
+    public static boolean isMouseDown() {
+        return mouseDown;
     }
 }
