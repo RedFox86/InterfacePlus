@@ -30,4 +30,14 @@ public class Logger {
 	public void error(String message) {
 		System.out.println(RED_ANSI + time.get() + "/" + name + "/ERROR/" + message + ANSI_RESET);
 	}
+
+	public static void anonymousInfo(String message) {
+		System.out.println(time.get() + "/ANONYMOUS/INFO/" + message);
+	}
+	public static void anonymousWarn(String message) {
+		System.out.println(RED_ANSI + time.get() +  "/ANONYMOUS/WARN/" + message + ANSI_RESET);
+	}
+	public static void anonymousError(String message) {
+		System.out.println(RED_ANSI + time.get() + "/ANONYMOUS/ERROR/" + message + ANSI_RESET);
+	}
 }
