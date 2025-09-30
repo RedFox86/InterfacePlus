@@ -15,7 +15,7 @@ public class DisplayPanel extends JPanel implements Runnable {
     private Thread thread;
     private final Interface panelInterface;
     private final WindowContext context;
-    public Renderer renderer;
+    public final Renderer renderer;
 
     public DisplayPanel(Interface i, int fps, Dimension size) {
         this.size = size;
