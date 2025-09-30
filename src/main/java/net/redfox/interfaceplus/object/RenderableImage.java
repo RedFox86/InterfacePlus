@@ -1,6 +1,5 @@
 package net.redfox.interfaceplus.object;
 
-import net.redfox.interfaceplus.gui.util.WindowContext;
 import net.redfox.interfaceplus.math.Size2;
 import net.redfox.interfaceplus.math.Vector2;
 
