@@ -45,11 +45,11 @@ public abstract class RenderableObject implements Renderable {
     }
 
     public int getWidth() {
-        return size.getWidth();
+        return size.width();
     }
 
     public int getHeight() {
-        return size.getHeight();
+        return size.height();
     }
 
     public void drawImage(WindowContext context, BufferedImage image) {
@@ -58,8 +58,8 @@ public abstract class RenderableObject implements Renderable {
                         image,
                         (int) (getPosition().getX() + 0.5),
                         (int) (getPosition().getY() + 0.5),
-                        getSize().getWidth(),
-                        getSize().getHeight(),
+                        getSize().width(),
+                        getSize().height(),
                         null);
     }
 
