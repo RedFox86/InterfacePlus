@@ -22,7 +22,7 @@ tasks.test {
 spotless {
     java {
         removeUnusedImports()
-        googleJavaFormat().reflowLongStrings(false).aosp()
+        googleJavaFormat("1.28.0").reflowLongStrings(false).aosp()
         formatAnnotations()
     }
 }
