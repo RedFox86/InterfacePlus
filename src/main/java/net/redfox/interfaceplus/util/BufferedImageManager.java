@@ -13,12 +13,16 @@ public class BufferedImageManager {
         try {
             InputStream stream = BufferedImageManager.class.getResourceAsStream(imgPath);
             if (stream == null) {
-                LOGGER.warn("An image at '" + imgPath + "' was not found! Some renderable objects may appear invisible!");
+                LOGGER.warn(
+                        "An image at '"
+                                + imgPath
+                                + "' was not found! Some renderable objects may appear invisible!");
             } else {
                 LOGGER.info("Image at '" + imgPath + "' was successfully loaded!");
                 return ImageIO.read(stream);
             }
-        } catch (IOException _) {}
+        } catch (IOException _) {
+        }
         return new BufferedImage(1, 1, 1);
     }
 }

@@ -1,7 +1,6 @@
 package net.redfox.interfaceplus.object;
 
 import java.util.ArrayList;
-
 import net.redfox.interfaceplus.gui.util.WindowContext;
 
 public class Renderer {

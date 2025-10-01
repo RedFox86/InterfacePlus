@@ -1,7 +1,6 @@
 package net.redfox.interfaceplus.object.util.animated;
 
 import java.awt.image.BufferedImage;
-
 import net.redfox.interfaceplus.gui.util.WindowContext;
 import net.redfox.interfaceplus.math.Size2;
 import net.redfox.interfaceplus.math.Vector2;
@@ -32,44 +31,44 @@ public class NodePanel extends RenderableObject {
 
     @Override
     public void update(WindowContext context) {
-      drawImage(context, displayImages[currentFrame]);
+        drawImage(context, displayImages[currentFrame]);
     }
 
-  @Override
-  public String getName() {
-    return "";
-  }
+    @Override
+    public String getName() {
+        return "";
+    }
 
-  @SuppressWarnings("unchecked")
-  public static class Builder extends RenderableObject.Builder {
-      private BufferedImage[] displayImages;
-      private boolean repeat;
+    @SuppressWarnings("unchecked")
+    public static class Builder extends RenderableObject.Builder {
+        private BufferedImage[] displayImages;
+        private boolean repeat;
 
-      public Builder(Renderer renderer) {
-        super(renderer);
-        repeat = true;
-        displayImages = new BufferedImage[]{};
-      }
+        public Builder(Renderer renderer) {
+            super(renderer);
+            repeat = true;
+            displayImages = new BufferedImage[] {};
+        }
 
-      public NodePanel.Builder repeat(boolean repeat) {
-        this.repeat = repeat;
-        return this;
-      }
+        public NodePanel.Builder repeat(boolean repeat) {
+            this.repeat = repeat;
+            return this;
+        }
 
-      @Override
-      public NodePanel.Builder position(Vector2 position) {
-        super.setPosition(position);
-        return this;
-      }
+        @Override
+        public NodePanel.Builder position(Vector2 position) {
+            super.setPosition(position);
+            return this;
+        }
 
-      public NodePanel.Builder displayImages(BufferedImage[] displayImages) {
-        this.displayImages = displayImages;
-        return this;
-      }
+        public NodePanel.Builder displayImages(BufferedImage[] displayImages) {
+            this.displayImages = displayImages;
+            return this;
+        }
 
-      @Override
-      public NodePanel build() {
-        return super.build(new NodePanel(displayImages, position, repeat));
-      }
+        @Override
+        public NodePanel build() {
+            return super.build(new NodePanel(displayImages, position, repeat));
+        }
     }
 }

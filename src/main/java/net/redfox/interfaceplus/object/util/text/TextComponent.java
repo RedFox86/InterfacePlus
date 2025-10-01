@@ -1,14 +1,13 @@
 package net.redfox.interfaceplus.object.util.text;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics2D;
 import net.redfox.interfaceplus.gui.util.WindowContext;
 import net.redfox.interfaceplus.math.Size2;
 import net.redfox.interfaceplus.math.Vector2;
 import net.redfox.interfaceplus.object.RenderableObject;
 import net.redfox.interfaceplus.object.Renderer;
-
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics2D;
 
 @SuppressWarnings("unused")
 public class TextComponent extends RenderableObject {
@@ -111,6 +110,7 @@ public class TextComponent extends RenderableObject {
             super.setPosition(position);
             return this;
         }
+
         @Override
         public TextComponent build() {
             return build(new TextComponent(contents, position, size, color, font, fontSize, style));

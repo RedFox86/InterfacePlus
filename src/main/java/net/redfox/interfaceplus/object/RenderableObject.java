@@ -54,7 +54,13 @@ public abstract class RenderableObject implements Renderable {
 
     public void drawImage(WindowContext context, BufferedImage image) {
         context.getGraphics2D()
-            .drawImage(image, (int) (getPosition().getX() + 0.5), (int) (getPosition().getY() + 0.5), getSize().getWidth(), getSize().getHeight(), null);
+                .drawImage(
+                        image,
+                        (int) (getPosition().getX() + 0.5),
+                        (int) (getPosition().getY() + 0.5),
+                        getSize().getWidth(),
+                        getSize().getHeight(),
+                        null);
     }
 
     public void update(WindowContext context) {}
@@ -91,6 +97,7 @@ public abstract class RenderableObject implements Renderable {
         }
 
         public abstract <T extends Renderable> T build();
+
         public abstract <K extends RenderableObject.Builder> K position(Vector2 position);
     }
 }

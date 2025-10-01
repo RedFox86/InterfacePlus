@@ -9,68 +9,68 @@ import net.redfox.interfaceplus.object.Renderer;
 
 @SuppressWarnings("unused")
 public class AnimatedPanel extends RenderableObject {
-  private final BufferedImage[] displayImages;
-  private final int maxFrame;
-  private final int frameRate;
-  private int currentFrame;
-  private int frameDelay;
+    private final BufferedImage[] displayImages;
+    private final int maxFrame;
+    private final int frameRate;
+    private int currentFrame;
+    private int frameDelay;
 
-  protected AnimatedPanel(BufferedImage[] displayImages, Vector2 position, int frameRate) {
-    super(new Size2(displayImages[0].getWidth(), displayImages[0].getHeight()), position);
-    this.displayImages = displayImages;
-    maxFrame = this.displayImages.length;
-    this.frameRate = frameRate;
-  }
-
-  @Override
-  public void update(WindowContext context) {
-    if (frameDelay == frameRate) {
-      frameDelay = 0;
-      if (currentFrame == maxFrame - 1) {
-        currentFrame = 0;
-      } else {
-        currentFrame++;
-      }
-    } else {
-      frameDelay++;
-    }
-
-    drawImage(context, displayImages[currentFrame]);
-  }
-
-  @Override
-  public String getName() {
-    return "";
-  }
-
-  @SuppressWarnings("unchecked")
-  public static class Builder extends RenderableObject.Builder {
-    private BufferedImage[] displayImages;
-    private int frameRate;
-
-    public Builder(Renderer renderer) {
-      super(renderer);
-    }
-
-    public AnimatedPanel.Builder frameRate(int frameRate) {
-      this.frameRate = frameRate;
-      return this;
-    }
-
-    public AnimatedPanel.Builder displayImages(BufferedImage[] displayImages) {
-      this.displayImages = displayImages;
-      return this;
+    protected AnimatedPanel(BufferedImage[] displayImages, Vector2 position, int frameRate) {
+        super(new Size2(displayImages[0].getWidth(), displayImages[0].getHeight()), position);
+        this.displayImages = displayImages;
+        maxFrame = this.displayImages.length;
+        this.frameRate = frameRate;
     }
 
     @Override
-    public AnimatedPanel.Builder position(Vector2 position) {
-      super.setPosition(position);
-      return this;
+    public void update(WindowContext context) {
+        if (frameDelay == frameRate) {
+            frameDelay = 0;
+            if (currentFrame == maxFrame - 1) {
+                currentFrame = 0;
+            } else {
+                currentFrame++;
+            }
+        } else {
+            frameDelay++;
+        }
+
+        drawImage(context, displayImages[currentFrame]);
     }
 
     @Override
-    public AnimatedPanel build() {
-      return super.build(new AnimatedPanel(displayImages, position, frameRate));
+    public String getName() {
+        return "";
     }
-  }
+
+    @SuppressWarnings("unchecked")
+    public static class Builder extends RenderableObject.Builder {
+        private BufferedImage[] displayImages;
+        private int frameRate;
+
+        public Builder(Renderer renderer) {
+            super(renderer);
+        }
+
+        public AnimatedPanel.Builder frameRate(int frameRate) {
+            this.frameRate = frameRate;
+            return this;
+        }
+
+        public AnimatedPanel.Builder displayImages(BufferedImage[] displayImages) {
+            this.displayImages = displayImages;
+            return this;
+        }
+
+        @Override
+        public AnimatedPanel.Builder position(Vector2 position) {
+            super.setPosition(position);
+            return this;
+        }
+
+        @Override
+        public AnimatedPanel build() {
+            return super.build(new AnimatedPanel(displayImages, position, frameRate));
+        }
+    }
 }
