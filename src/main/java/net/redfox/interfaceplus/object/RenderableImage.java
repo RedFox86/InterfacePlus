@@ -1,6 +1,8 @@
 package net.redfox.interfaceplus.object;
 
 import java.awt.image.BufferedImage;
+
+import net.redfox.interfaceplus.gui.util.WindowContext;
 import net.redfox.interfaceplus.math.Size2;
 import net.redfox.interfaceplus.math.Vector2;
 
@@ -11,6 +13,11 @@ public abstract class RenderableImage extends RenderableObject {
     protected RenderableImage(BufferedImage displayImage, Vector2 position) {
         super(new Size2(displayImage.getWidth(), displayImage.getHeight()), position);
         this.displayImage = displayImage;
+    }
+
+    @Override
+    public void update(WindowContext context) {
+      drawImage(context, displayImage);
     }
 
     public abstract static class Builder extends RenderableObject.Builder {
